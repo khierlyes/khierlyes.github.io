@@ -7,6 +7,8 @@
 <body>
 
 <h1>    Lyes sid rajaala</h1>
+<h2 id = "affichage">    Lyes sid rajaala</h2>
+
 
 <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
 <script>
@@ -19,6 +21,10 @@
     messagingSenderId: "920778132404"
   };
   firebase.initializeApp(config);
+  const preobject = document.getElementById("affichage");
+  
+  const ref = firebase.databse().ref().child('object');
+  ref.on('', snap=> console.log(snap.va()));
 </script>    
 </body>
 </html>
