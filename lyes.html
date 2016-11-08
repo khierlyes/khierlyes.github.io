@@ -7,7 +7,7 @@
 <body>
 
 <h1>    Lyes sid rajaala</h1>
-<h2 id = "affichage">    Lyes sid rajaala</h2>
+<h2 id = "result">    Lyes sid rajaala</h2>
 
 
 <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
@@ -21,10 +21,12 @@
     messagingSenderId: "920778132404"
   };
   firebase.initializeApp(config);
-  const preobject = document.getElementById("affichage");
-  
+  const result = document.getElementById("result");
+    result.innerText = "Hiiiiii";
   const ref = firebase.database().ref().child('compte');
-  ref.on('value', snap=> console.log(snap.val()));
+  ref.on('value', snap=> 
+   result.innerText = JSON.stringify(snap.val()) 
+  );
 </script>    
 </body>
 </html>
