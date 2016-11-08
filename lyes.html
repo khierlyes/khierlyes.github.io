@@ -24,7 +24,7 @@
   const preobject = document.getElementById("affichage");
   
   const ref = firebase.databse().ref().child('object');
-  ref.on('', snap=> console.log(snap.va()));
+  ref.on('', snap=> console.log(snap.val()));
 </script>    
 </body>
 </html>
