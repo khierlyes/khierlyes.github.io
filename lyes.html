@@ -23,7 +23,7 @@
   firebase.initializeApp(config);
   const preobject = document.getElementById("affichage");
   
-  const ref = firebase.databse().ref().child('object');
+  const ref = firebase.database().ref().child('object');
   ref.on('', snap=> console.log(snap.val()));
 </script>    
 </body>
