@@ -8,6 +8,8 @@
 
 <h1>    Lyes sid rajaala</h1>
 <h2 id = "result">    Lyes sid rajaala</h2>
+<input  id= "email"></input>
+<input  id= "nom"></input>
 
 
 <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
@@ -22,10 +24,15 @@
   };
   firebase.initializeApp(config);
   const result = document.getElementById("result");
+  const email = document.getElementById("email");
+  const nom = document.getElementById("nom");
     result.innerText = "Hiiiiii";
   const ref = firebase.database().ref().child('compte');
-  ref.on('value', snap=> 
-   result.innerText = JSON.stringify(snap.val()) 
+  ref.on('value', snap=> {
+   result.innerText = JSON.stringify(snap.val());
+   email.value = snap.val().email;
+   nom.value = snap.val().nom;
+   }
   );
 </script>    
 </body>
