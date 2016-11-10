@@ -35,7 +35,7 @@
   const nom = document.getElementById("Nom");
   const Agence = document.getElementById("Agence");
     result.innerText = "Hiiiiii";
-  const ref = firebase.database().ref().child('compte');
+  const ref = firebase.database().ref().child('Compte');
   ref.on('value', snap=> {
    result.innerText = JSON.stringify(snap.val());
    Email.value = snap.val().Email;
