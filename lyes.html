@@ -14,8 +14,8 @@
 
 <h1>    Lyes khier</h1>
 <h2 id = "result">    Lyes khier</h2>
-<input  id= "email"></input>
-<input  id= "nom"></input>
+<input  id= "Email"></input>
+<input  id= "Nom"></input>
 <input  id= "Agence"></input>
 
 
@@ -31,15 +31,15 @@
   };
   firebase.initializeApp(config);
   const result = document.getElementById("result");
-  const email = document.getElementById("email");
-  const nom = document.getElementById("nom");
+  const email = document.getElementById("Email");
+  const nom = document.getElementById("Nom");
   const Agence = document.getElementById("Agence");
     result.innerText = "Hiiiiii";
   const ref = firebase.database().ref().child('compte');
   ref.on('value', snap=> {
    result.innerText = JSON.stringify(snap.val());
-   email.value = snap.val().email;
-   nom.value = snap.val().nom;
+   Email.value = snap.val().Email;
+   Nom.value = snap.val().Nom;
    Agence.value = snap.val().Agence;
    }
   );
