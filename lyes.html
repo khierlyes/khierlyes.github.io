@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>lyes firbase</title>
+       <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 </head>
+  
 <body>
 
-<h1>    Lyes sid rajaala</h1>
-<h2 id = "result">    Lyes sid rajaala</h2>
+<h1>    Lyes khier</h1>
+<h2 id = "result">    Lyes khier</h2>
 <input  id= "email"></input>
 <input  id= "nom"></input>
 
@@ -26,12 +32,14 @@
   const result = document.getElementById("result");
   const email = document.getElementById("email");
   const nom = document.getElementById("nom");
+  const Agence = document.getElementById("Agence");
     result.innerText = "Hiiiiii";
   const ref = firebase.database().ref().child('compte');
   ref.on('value', snap=> {
    result.innerText = JSON.stringify(snap.val());
    email.value = snap.val().email;
    nom.value = snap.val().nom;
+   Agence.value = snap.val().Agence;
    }
   );
 </script>    
